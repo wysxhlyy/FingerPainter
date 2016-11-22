@@ -32,13 +32,14 @@ public class Changebrush extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_changebrush);
 
-
+        //Get the brushtype and brushwidth used now.
         Bundle bundle = getIntent().getExtras();
         brushType = (TextView) findViewById(R.id.brushType);
         brushWidth = (TextView) findViewById(R.id.brushWidth);
         brushType.setText(bundle.getString("nowBrushType"));
-        brushWidth.setText(bundle.getString("nowBrushWidth"));
+        brushWidth.setText(bundle.getInt("nowBrushWidth")+"");
 
+        //set the new brushtype using radiogroup.
         newBrushType=(RadioGroup)findViewById(R.id.newBrushType);
         newBrushType.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -52,20 +53,16 @@ public class Changebrush extends AppCompatActivity {
             }
         });
 
-
+        //transfer the new brushtype and color data back to MainActivity.
         submit=(Button)findViewById(R.id.submit);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent result=new Intent();
                 Bundle bundle1=new Bundle();
-
-                System.out.println(newBT);
                 bundle1.putString("newBrushType",newBT);
-
                 newBrushWidth=(EditText)findViewById(R.id.newWidth);
                 newBW=newBrushWidth.getText().toString();
-
                 bundle1.putString("newBrushWidth",newBW);
                 result.putExtras(bundle1);
                 setResult(Activity.RESULT_OK,result);

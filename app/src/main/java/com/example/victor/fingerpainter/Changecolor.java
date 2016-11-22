@@ -29,7 +29,7 @@ public class Changecolor extends AppCompatActivity {
 
         //Reflect the color used now.
         Bundle bundle=getIntent().getExtras();
-        int nowColor=Integer.parseInt(bundle.getString("nowColor"));
+        int nowColor=bundle.getInt("nowColor");
         iv=(ImageView)findViewById(R.id.nowColor);
         iv.setBackgroundColor(nowColor);
 
@@ -50,6 +50,7 @@ public class Changecolor extends AppCompatActivity {
             }
         });
 
+        //transfer the data back to MainActivity.
         submit=(Button)findViewById(R.id.submitColor);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override

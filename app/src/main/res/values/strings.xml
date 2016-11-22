@@ -8,4 +8,6 @@
         <item>grey</item>
         <item>yellow</item>
     </string-array>
+
+    <item name="myFingerPainterViewId" type="id"/>
 </resources>

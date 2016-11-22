@@ -100,9 +100,9 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Submit"
+        android:text="confirm"
         android:id="@+id/submit"
-        android:background="#6523945a"
+        android:background="@android:color/holo_green_light"
         />
 
 
